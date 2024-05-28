@@ -1,0 +1,24 @@
+
+<app-header title="Home"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+ 
+    
+    <ion-button expand="block" (click)="logout()">Logout</ion-button>
+    <!-- lista de jugadores -->
+    <h2>Libros</h2>
+    <ion-list>
+      <!-- item enlazable con la pag jugador -->
+      <ion-item *ngFor="let libro of libros" [routerLink]="['/libro']">
+        <ion-label>{{libro.isbn}}</ion-label>
+        <ion-label>{{libro.titulo}}</ion-label>
+        <ion-label>{{libro.autor}}</ion-label>
+      </ion-item>
+     
+    </ion-list>
+
+    <ion-button expand="block" (click)="addlibro()">Añadir libro</ion-button>
+  </div>
+</ion-content>
