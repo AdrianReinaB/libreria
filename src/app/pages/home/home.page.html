@@ -11,10 +11,10 @@
     <h2>Libros</h2>
     <ion-list>
       <!-- item enlazable con la pag jugador -->
-      <ion-item *ngFor="let libro of libros" [routerLink]="['/libro']">
-        <ion-label>{{libro.isbn}}</ion-label>
-        <ion-label>{{libro.titulo}}</ion-label>
-        <ion-label>{{libro.autor}}</ion-label>
+      <ion-item *ngFor="let lib of libro" (click)="detallesLibro(lib.isbn)">
+        <ion-label>{{lib.isbn}}</ion-label>
+        <ion-label>{{lib.titulo}}</ion-label>
+        <ion-label>{{lib.autor}}</ion-label>
       </ion-item>
      
     </ion-list>

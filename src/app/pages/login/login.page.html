@@ -5,23 +5,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input type="text" id="email" name="email" required></ion-input>
-  </ion-item>
+  <form (ngSubmit)="login()" [formGroup]="credentialsLogin">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" id="email" name="email" required formControlName="emailLog"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" id="password" name="password" required></ion-input>
-  </ion-item>
-  <ion-button expand="block" (click)="login()">Login</ion-button>
-  <a routerLink="/registro">¿Aún no estás registrado?</a>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" id="password" name="password" required formControlName="passwordLog"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="login()">Login</ion-button>
+  </form>
+
+  <ion-button (click)="irRegistro()">¿Aún no estás registrado?</ion-button>
 
 </ion-content>
-
